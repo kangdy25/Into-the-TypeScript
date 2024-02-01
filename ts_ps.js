@@ -25,3 +25,32 @@ var school = {
 };
 school.score[4] = false;
 school.friend = ['Lee', school.teacher];
+/////////////// Functon ///////////////
+// Q1. 이름을 파라미터로 입력하면 콘솔창에 "안녕하세요 홍길동"을 출력해주고
+function Hong(name) {
+    if (name) {
+        console.log("\uC548\uB155\uD558\uC138\uC694 ".concat(name));
+    }
+    else {
+        console.log('이름이 없습니다.');
+    }
+}
+// Q2. 함수에 숫자 또는 문자를 집어넣으면 자릿수를 세어 출력해주는 함수를 만들어보십시오.
+function digit(num) {
+    num = num.toString();
+    console.log(num.length);
+}
+// Q3. 결혼 가능 확률을 알려주는 함수를 만들어봅시다.
+function canYouMarry(money, home, attractive) {
+    var score = 0;
+    score += money;
+    if (home) {
+        score += 500;
+    }
+    if (attractive === '상') {
+        score += 100;
+    }
+    if (score >= 600) {
+        return "결혼가능";
+    }
+}
