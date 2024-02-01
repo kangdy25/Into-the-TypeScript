@@ -5,9 +5,11 @@ let name :string = 'Mudryk';
 // 문자 타입 또는 숫자 타입 가능
 let player :string | number = 'Mudryk';
 
-// 배열 또는 객체 타입 사용법
+// 배열 또는 객체 타입 사용법 
+// (array 자료에 타입 지정 가능)
 let person : string[] = ['Nkunku', 'Enzo'];
-let human : {name : string} = {name  : 'Colwil'}
+// (object 자료에 타입 지정 가능) 
+let chelsea : {member1 : string, member2: string} = {member1 : 'Colwil', member2: 'Gusto'}
 
 // 타입 지정
 type myType = string | number;
@@ -24,6 +26,10 @@ let Luke : People = {name : 'kim'};
 function multiply(x : number) :number {
     return x * 2 ;
 }
+// ?는 x : number | undefined랑 똑같음
+function muliply2(x? : number) {
+    return x * 2; // 요거는 함수 실행하면 오류남
+}
 
 // 클래스에 타입 지정
 class User {
@@ -32,3 +38,21 @@ class User {
         this.name = name;
     }
 }
+
+// Union Type (2개 이상의 타입 설정)
+let names: string | number = 'kim';
+let array: (number | string)[] = [1,'2',3]
+let object: {data : number | string} = { data : '123' }
+
+// Any Type (타입스크립트를 쓰는 이유가....)
+let allType : any;
+allType = 123;
+allType = [];
+
+// Unknown Type (Any와 비슷하지만, 조금 더 엄격한 타입)
+let Idontknow : unknown;
+Idontknow = 123;
+Idontknow = {};
+
+// let var1 : string = Idontknow; // unknown은 오류 O
+// let var2 : string = allType; // any는 오류 X
