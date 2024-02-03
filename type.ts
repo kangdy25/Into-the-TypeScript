@@ -56,3 +56,22 @@ Idontknow = {};
 
 // let var1 : string = Idontknow; // unknown은 오류 O
 // let var2 : string = allType; // any는 오류 X
+
+// Narrowing (타입이 불확실할 경우, 특정 타입으로 제한한다.)
+function Narrowing(x :number | string){
+    if (typeof x === 'number') {
+        return x + 1;
+    } 
+    else if (typeof x === 'string') {
+        return x + 1;
+    }
+    else { // 반드시 else문이 있어야 한다.
+        return 0;
+    }
+}
+
+// Assertion (타입을 덮어씌운다. 평소에는 쓰지 말자;;;)
+function Assertion(x :number | string){ 
+    return (x as number) + 1;
+}
+console.log( Assertion(123) )

@@ -70,3 +70,33 @@ function canYouMarry(money : number, home : boolean, attractive : string) : stri
         return "결혼가능";
     }
 }
+
+/////////////// Narrowing / Assertion ///////////////
+
+// Q1. 숫자 여러개를 array 자료에 저장해놨는데
+function cleaning(array : (number | string)[]) : number[] {
+    let newArray : number[] = [];
+    array.forEach((a)=>{
+        if (typeof a === 'string') {
+            newArray.push(parseFloat(a));
+        } else {
+            newArray.push(a);
+        }
+    })
+    return newArray;
+}
+
+// Q2. 다음과 같은 함수를 만들어 보십시오.
+let dongyoon = { subject : 'math' }
+let sunwoo = { subject : ['science', 'english'] }
+let jungin = { subject : ['science', 'art', 'korean'] }
+
+function Subject(obj : {subject : string | string[]}) {
+    if (typeof obj.subject === 'string') {
+        return obj.subject;
+    } else if (Array.isArray(obj.subject)) {
+        return obj.subject[obj.subject.length - 1];
+    } else {
+        return '앙 타입 에러띠';
+    }
+}
