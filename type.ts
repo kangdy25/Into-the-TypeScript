@@ -102,3 +102,24 @@ type PositionX = { x: number };
 type PositionY = { y: number };
 type XandY = PositionX & PositionY
 let Coord :XandY = { x : 1, y : 2 }
+
+// Literal Types
+let lee :'대머리';
+let choi :'솔로';
+
+let direction: 'left' | 'right';
+direction = 'left';
+
+function func(a : 'hello') : 1 | 0 | -1 {
+    return 1 
+}
+
+let nameData = {
+    name : 'kim'
+  }
+  
+function myFunc(a : 'kim') {
+  
+}
+
+myFunc(nameData.name)

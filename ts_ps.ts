@@ -1,4 +1,4 @@
-/////////////// Basic Type ///////////////
+/////////////// Baic Type ///////////////
 
 // Q1. 여러분의 이름, 나이, 출생지역을 변수로 각각 저장해봅시다. 
 let myName : string = '동불이';
@@ -120,3 +120,10 @@ type type2 = {
 // Q3. 다음을 만족하는 type alias를 만들어보십시오.
 type Jammin = {jammin: boolean};
 type type3 = type2 & Jammin;
+
+/////////////// Literal Type ///////////////
+
+// Q1. 이런 함수는 어떻게 만들까요?
+function rockScissorPaper(my : '가위' | '바위' | '보') : [('가위' | '바위' | '보')] {
+    return ['가위']
+}
