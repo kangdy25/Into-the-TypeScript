@@ -57,3 +57,9 @@ function Assertion(x) {
     return x + 1;
 }
 console.log(Assertion(123));
+var animal;
+var teacher = { name: 'Daniel', age: 20 };
+var footballPlayer = {
+    name: 'Son'
+};
+var Coord = { x: 1, y: 2 };

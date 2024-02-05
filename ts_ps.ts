@@ -100,3 +100,23 @@ function Subject(obj : {subject : string | string[]}) {
         return '앙 타입 에러띠';
     }
 }
+
+/////////////// Type Alias ///////////////
+
+// Q1. 다음 조건을 만족하는 타입을 만들어봅시다. 
+type type1 = {
+    color? : string,
+    size : number,
+    readonly position : number[],
+}
+
+// Q2. 다음을 만족하는 type alias를 연습삼아 간단히 만들어보십시오. 
+type type2 = {
+    name : string,
+    phone : number,
+    email: string,
+}
+
+// Q3. 다음을 만족하는 type alias를 만들어보십시오.
+type Jammin = {jammin: boolean};
+type type3 = type2 & Jammin;

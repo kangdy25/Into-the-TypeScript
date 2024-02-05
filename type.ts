@@ -75,3 +75,30 @@ function Assertion(x :number | string){
     return (x as number) + 1;
 }
 console.log( Assertion(123) )
+
+// type alias
+type Animal = string | number | undefined;
+let animal : Animal;
+
+type Teacher = {
+    name : string,
+    age : number,
+}
+let teacher : Teacher = { name : 'Daniel', age : 20 } 
+
+type Korea = {
+    readonly name : string,
+}
+let footballPlayer : Korea = {
+    name : 'Son'
+}
+// footballPlayer.name = 'Hwang' //readonly라서 에러남
+
+type Name = string;
+type Age = number;
+type Person = Name | Age;
+
+type PositionX = { x: number };
+type PositionY = { y: number };
+type XandY = PositionX & PositionY
+let Coord :XandY = { x : 1, y : 2 }
