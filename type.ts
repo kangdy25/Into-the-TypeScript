@@ -116,10 +116,18 @@ function func(a : 'hello') : 1 | 0 | -1 {
 
 let nameData = {
     name : 'kim'
-  }
-  
+} as const
+
 function myFunc(a : 'kim') {
-  
+
 }
 
 myFunc(nameData.name)
+
+// Functon Alias
+
+type FunctionType = (a : string) => number;
+
+let functions : FunctionType = function () {
+    return 10;
+}

@@ -127,3 +127,49 @@ type type3 = type2 & Jammin;
 function rockScissorPaper(my : '가위' | '바위' | '보') : [('가위' | '바위' | '보')] {
     return ['가위']
 }
+
+/////////////// Function, Method Type Alias ///////////////
+
+// Q1. 위 코드에서 회원정보라는 변수에 타입지정 알아서 해보십시오. 
+type memb = {
+    name: string,
+    age: number,
+    plusOne: (x : number) => number,
+    changeName: () => void,
+}
+
+let userInfo = {
+    name : 'kim',
+    age : 30,
+    plusOne (x : number) : number{
+        return x + 1
+    },
+    changeName : () => {
+        console.log('안녕')
+    }
+}
+userInfo.plusOne(1);
+userInfo.changeName();
+
+// Q2. 다음 함수 2개를 만들어보고 타입까지 정의해보십시오
+type cutType = (a : string) => string;
+let cutZero : cutType = function (a) {
+    let result = a.replace(/^0+/, "");
+    return result;
+}
+
+function removeDash (a : string) : number {
+    let result = a.replace(/-/g, '');
+    return parseFloat(result);
+}
+
+// 함수에 함수를 집어넣고 싶습니다.
+type funcType1 = (a : string)=>string;
+type funcType2 = (a : string)=>number;
+
+function phoneNumber(a : string, b : funcType1, c :funcType2) {
+    let result = b(a);
+    let result2 = c(result);
+    console.log(result2)
+}
+phoneNumber('010-1111-2222', cutZero, removeDash)  
