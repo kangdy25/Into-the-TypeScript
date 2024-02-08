@@ -69,6 +69,7 @@ function canYouMarry(money : number, home : boolean, attractive : string) : stri
     if (score >= 600) {
         return "결혼가능";
     }
+    return ""
 }
 
 /////////////// Narrowing / Assertion ///////////////
@@ -173,3 +174,21 @@ function phoneNumber(a : string, b : funcType1, c :funcType2) {
     console.log(result2)
 }
 phoneNumber('010-1111-2222', cutZero, removeDash)  
+
+/////////////// Typescirpt DOM Manupulation ///////////////
+
+// Q1. 이미지를 바꿔봅시다.
+let img = document.querySelector('#image');
+if (img instanceof HTMLImageElement) {
+    img.src = 'new.jpg';
+}
+
+// Q2. 바꾸고 싶은 html 요소가 많습니다.
+let links = document.querySelectorAll('.link');
+
+for (let i = 0; i < links.length; i++) {
+    let a = links[i];
+    if (a instanceof HTMLAnchorElement) {
+        a.href = 'https://kakao.com';
+    }
+}

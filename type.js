@@ -1,5 +1,5 @@
 // 문자 타입만 가능
-var name = 'Mudryk';
+var ChelseaName = 'Mudryk';
 // name = 123; 숫자 타입이 들어오면 에러;
 // 문자 타입 또는 숫자 타입 가능
 var player = 'Mudryk';
@@ -17,7 +17,7 @@ function multiply(x) {
 }
 // ?는 x : number | undefined랑 똑같음
 function muliply2(x) {
-    return x * 2; // 요거는 함수 실행하면 오류남
+    // return x * 2; // 요거는 함수 실행하면 오류남
 }
 // 클래스에 타입 지정
 var User = /** @class */ (function () {
@@ -63,3 +63,45 @@ var footballPlayer = {
     name: 'Son'
 };
 var Coord = { x: 1, y: 2 };
+// Literal Types
+var lee;
+var choi;
+var direction;
+direction = 'left';
+function func(a) {
+    return 1;
+}
+var nameData = {
+    name: 'kim'
+};
+function myFunc(a) {
+}
+myFunc(nameData.name);
+var functions = function () {
+    return 10;
+};
+// Typescirpt DOM Manupulation
+var title = document.querySelector('#title');
+var link = document.querySelector('.link');
+var btn = document.querySelector('#button');
+// Narrowing 1
+if (title != null) {
+    title.innerHTML = '반갑소';
+}
+// Narrowing 2
+if (title instanceof Element) {
+    title.innerHTML = '반갑소';
+}
+// Narrowing 3 (비추)
+title = document.querySelector('#title');
+title.innerHTML = '반갑소';
+// Narrowing 4
+if ((title === null || title === void 0 ? void 0 : title.innerHTML) != undefined) {
+    title.innerHTML = '반갑소';
+}
+if (link instanceof HTMLAnchorElement) {
+    link.href = 'https://kakao.com';
+}
+btn === null || btn === void 0 ? void 0 : btn.addEventListener('click', function () {
+    console.log('앙!!');
+});

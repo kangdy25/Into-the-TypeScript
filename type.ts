@@ -1,5 +1,5 @@
 // 문자 타입만 가능
-let name :string = 'Mudryk';
+let ChelseaName :string = 'Mudryk';
 // name = 123; 숫자 타입이 들어오면 에러;
 
 // 문자 타입 또는 숫자 타입 가능
@@ -28,7 +28,7 @@ function multiply(x : number) :number {
 }
 // ?는 x : number | undefined랑 똑같음
 function muliply2(x? : number) {
-    return x * 2; // 요거는 함수 실행하면 오류남
+    // return x * 2; // 요거는 함수 실행하면 오류남
 }
 
 // 클래스에 타입 지정
@@ -131,3 +131,33 @@ type FunctionType = (a : string) => number;
 let functions : FunctionType = function () {
     return 10;
 }
+
+// Typescirpt DOM Manupulation
+let title = document.querySelector('#title');
+let link = document.querySelector('.link');
+let btn = document.querySelector('#button');
+
+// Narrowing 1
+if (title != null) {
+    title.innerHTML = '반갑소'
+}
+// Narrowing 2
+if (title instanceof Element) {
+    title.innerHTML = '반갑소'
+}
+// Narrowing 3 (비추)
+title = document.querySelector('#title') as Element;
+title.innerHTML = '반갑소'
+// Narrowing 4
+if (title?.innerHTML != undefined) {
+    title.innerHTML = '반갑소'
+}
+
+if (link instanceof HTMLAnchorElement) {
+    link.href = 'https://kakao.com'
+}
+
+btn?.addEventListener('click', ()=>{
+    console.log('앙!!')
+})
+

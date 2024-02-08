@@ -1,4 +1,4 @@
-/////////////// Basic Type ///////////////
+/////////////// Baic Type ///////////////
 // Q1. 여러분의 이름, 나이, 출생지역을 변수로 각각 저장해봅시다. 
 var myName = '동불이';
 var myAge = 24;
@@ -53,6 +53,7 @@ function canYouMarry(money, home, attractive) {
     if (score >= 600) {
         return "결혼가능";
     }
+    return "";
 }
 /////////////// Narrowing / Assertion ///////////////
 // Q1. 숫자 여러개를 array 자료에 저장해놨는데
@@ -81,5 +82,50 @@ function Subject(obj) {
     }
     else {
         return '앙 타입 에러띠';
+    }
+}
+/////////////// Literal Type ///////////////
+// Q1. 이런 함수는 어떻게 만들까요?
+function rockScissorPaper(my) {
+    return ['가위'];
+}
+var userInfo = {
+    name: 'kim',
+    age: 30,
+    plusOne: function (x) {
+        return x + 1;
+    },
+    changeName: function () {
+        console.log('안녕');
+    }
+};
+userInfo.plusOne(1);
+userInfo.changeName();
+var cutZero = function (a) {
+    var result = a.replace(/^0+/, "");
+    return result;
+};
+function removeDash(a) {
+    var result = a.replace(/-/g, '');
+    return parseFloat(result);
+}
+function phoneNumber(a, b, c) {
+    var result = b(a);
+    var result2 = c(result);
+    console.log(result2);
+}
+phoneNumber('010-1111-2222', cutZero, removeDash);
+/////////////// Typescirpt DOM Manupulation ///////////////
+// Q1. 이미지를 바꿔봅시다.
+var img = document.querySelector('#image');
+if (img instanceof HTMLImageElement) {
+    img.src = 'new.jpg';
+}
+// Q2. 바꾸고 싶은 html 요소가 많습니다.
+var links = document.querySelectorAll('.link');
+for (var i = 0; i < links.length; i++) {
+    var a = links[i];
+    if (a instanceof HTMLAnchorElement) {
+        a.href = 'https://kakao.com';
     }
 }
