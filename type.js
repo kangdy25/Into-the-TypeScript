@@ -105,3 +105,16 @@ if (link instanceof HTMLAnchorElement) {
 btn === null || btn === void 0 ? void 0 : btn.addEventListener('click', function () {
     console.log('앙!!');
 });
+// Class 
+var Persons = /** @class */ (function () {
+    function Persons(what) {
+        this.data = 0;
+        this.name = what;
+    }
+    return Persons;
+}());
+Persons.prototype.func = function (a) {
+    console.log('안뇽 ' + a);
+};
+var human1 = new Persons('kim');
+var human2 = new Persons('lee');

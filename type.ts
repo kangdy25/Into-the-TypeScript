@@ -125,7 +125,6 @@ function myFunc(a : 'kim') {
 myFunc(nameData.name)
 
 // Functon Alias
-
 type FunctionType = (a : string) => number;
 
 let functions : FunctionType = function () {
@@ -161,3 +160,18 @@ btn?.addEventListener('click', ()=>{
     console.log('앙!!')
 })
 
+// Class 
+class Persons {
+    name : string; // TypeScript Constructor는 미리 필드값으로 만들어야 함
+    func;
+    constructor(what : string) {
+        this.name = what
+    }
+    data : number = 0;
+}
+Persons.prototype.func = function(a : string) : void {
+    console.log('안뇽 ' + a)
+}
+
+let human1 = new Persons('kim');
+let human2 = new Persons('lee');

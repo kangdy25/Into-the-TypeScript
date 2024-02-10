@@ -129,3 +129,43 @@ for (var i = 0; i < links.length; i++) {
         a.href = 'https://kakao.com';
     }
 }
+/////////////// Class ///////////////
+// Q1. Car 클래스를 만들고 싶습니다.
+var Car = /** @class */ (function () {
+    function Car(models, prices) {
+        this.model = models;
+        this.price = prices;
+    }
+    Car.prototype.tax = function () {
+        return this.price / 10;
+    };
+    return Car;
+}());
+var car1 = new Car('소나타', 3000);
+console.log(car1); //콘솔창 출력결과는 { model : '소나타', price : 3000 }
+console.log(car1.tax()); //콘솔창 출력결과는 300
+// Q2. class인데 파라미터가 잔뜩 들어가는 class Word를 만들어봅시다.
+var Word = /** @class */ (function () {
+    function Word() {
+        var param = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            param[_i] = arguments[_i];
+        }
+        var nums = [];
+        var strs = [];
+        param.forEach(function (a) {
+            if (typeof a == 'number') {
+                nums.push(a);
+            }
+            else {
+                strs.push(a);
+            }
+        });
+        this.num = nums;
+        this.str = strs;
+    }
+    return Word;
+}());
+var obj = new Word('kim', 3, 5, 'park');
+console.log(obj.num); //[3,5]
+console.log(obj.str); //['kim', 'park']

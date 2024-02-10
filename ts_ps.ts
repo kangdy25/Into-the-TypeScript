@@ -192,3 +192,46 @@ for (let i = 0; i < links.length; i++) {
         a.href = 'https://kakao.com';
     }
 }
+
+/////////////// Class ///////////////
+
+// Q1. Car 클래스를 만들고 싶습니다.
+class Car {
+    model : string;
+    price : number;
+    constructor(models : string, prices : number) {
+        this.model = models;
+        this.price = prices;
+    }
+    tax() : number {
+        return this.price / 10;
+    }
+}
+
+let car1 = new Car('소나타', 3000)
+console.log(car1) //콘솔창 출력결과는 { model : '소나타', price : 3000 }
+console.log(car1.tax()) //콘솔창 출력결과는 300
+
+// Q2. class인데 파라미터가 잔뜩 들어가는 class Word를 만들어봅시다.
+class Word {
+    num : number[];
+    str : string[];
+    constructor(...param : (number | string)[] ) {
+        let nums : number[] = [];
+        let strs : string[] = [];
+
+        param.forEach((a)=>{
+            if (typeof a == 'number') {
+                nums.push(a);
+            } else {
+                strs.push(a);
+            }
+        })
+        this.num = nums;
+        this.str = strs;
+    }
+}
+
+let obj = new Word('kim', 3, 5, 'park');
+console.log(obj.num) //[3,5]
+console.log(obj.str) //['kim', 'park']
