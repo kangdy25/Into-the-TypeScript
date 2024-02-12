@@ -235,3 +235,40 @@ class Word {
 let obj = new Word('kim', 3, 5, 'park');
 console.log(obj.num) //[3,5]
 console.log(obj.str) //['kim', 'park']
+
+/////////////// Class ///////////////
+
+// Q1. interface 이용해서 간단하게 타입을 만들어봅시다
+interface Item {
+    brand : string,
+    serialNumber : number,
+    model : string[],
+}
+let item : Item = { brand : 'Samsung', serialNumber : 1360, model : ['TV', 'phone'] }
+
+// Q2. array 안에 object 여러개가 필요합니다.
+interface Cart {
+    product : string,
+    price : number,
+}
+let cart : Cart[] = [ { product : '청소기', price : 7000 }, { product : '삼다수', price : 800 } ] 
+
+// Q3. 위에서 만든 타입을 extends 해봅시다.
+interface NewCart extends Cart {
+    card : boolean
+}
+
+// Q4. object 안에 함수를 2개 넣고 싶은데요
+interface PM {
+    plus : (a : number, b : number) => number,
+    minus : (a : number, b : number) => number,
+}
+
+let object : PM = {
+    plus(a, b) {
+        return a + b
+    },
+    minus(a, b) {
+        return a- b
+    }
+}

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 // 문자 타입만 가능
 var ChelseaName = 'Mudryk';
 // name = 123; 숫자 타입이 들어오면 에러;
@@ -118,3 +120,9 @@ Persons.prototype.func = function (a) {
 };
 var human1 = new Persons('kim');
 var human2 = new Persons('lee');
+var rect = { color: 'red', width: 100 };
+var student1 = { name: 'kim' };
+var teacher1 = { name: 'kim', age: 50 };
+// Type VS Interface
+// Interface는 중복 선언 가능
+// Type은 중복 선언 불가능

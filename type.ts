@@ -1,3 +1,5 @@
+import { Interface } from "readline";
+
 // 문자 타입만 가능
 let ChelseaName :string = 'Mudryk';
 // name = 123; 숫자 타입이 들어오면 에러;
@@ -175,3 +177,25 @@ Persons.prototype.func = function(a : string) : void {
 
 let human1 = new Persons('kim');
 let human2 = new Persons('lee');
+
+// Interface (object 사용시 interface 키워드로 type alias 생성 가능)
+interface Square {color : string, width: number}
+let rect : Square = {color : 'red', width: 100}
+
+interface Students {name : string}
+// interface Teachers {name : string, age : number}
+interface Teachers extends Students {
+    age : number
+}
+
+let student1 : Students = {name : 'kim'}
+let teacher1 : Teachers = {name : 'kim', age : 50}
+
+// Intersection Type
+type Animals = {name : string}
+type Cats = {age : number} & Animal
+
+// Type VS Interface
+
+// Interface는 중복 선언 가능
+// Type은 중복 선언 불가능

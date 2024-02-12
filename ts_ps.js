@@ -169,3 +169,13 @@ var Word = /** @class */ (function () {
 var obj = new Word('kim', 3, 5, 'park');
 console.log(obj.num); //[3,5]
 console.log(obj.str); //['kim', 'park']
+var item = { brand: 'Samsung', serialNumber: 1360, model: ['TV', 'phone'] };
+var cart = [{ product: '청소기', price: 7000 }, { product: '삼다수', price: 800 }];
+var object = {
+    plus: function (a, b) {
+        return a + b;
+    },
+    minus: function (a, b) {
+        return a - b;
+    }
+};
