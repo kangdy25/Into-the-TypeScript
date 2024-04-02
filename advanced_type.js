@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -71,3 +86,42 @@ function neverFunction2(parameter) {
         parameter;
     }
 }
+// Object-Oriented Programming
+var User = /** @class */ (function () {
+    function User(a) {
+        // private 붙으면 변경 방지 가능, class 안에서만 수정 가능
+        this.familyName = 'kim';
+        // protected 붙으면 변경 방지 가능,현재 class 안에서 + extends된 class 안에서 수정 가능
+        this.age = 30;
+        this.y = 20; // 자식만 사용 가능
+        this.name = this.familyName + a;
+    }
+    User.prototype.changeFamilyName = function (b) {
+        this.familyName = b;
+    };
+    // static 붙으면 부모 class에 직접 부여됨
+    User.x = 10; // 부모만 사용 가능 (자식에게 안 물려줌, extends는 물려줌)
+    return User;
+}());
+var users = new User('옥지');
+// users.familyName = 'Lee'; // error!
+users.changeFamilyName('ang kim');
+console.log(User.x);
+// public
+var Person = /** @class */ (function () {
+    function Person(name) {
+        this.name = name;
+    }
+    return Person;
+}());
+// extends
+var NewUser = /** @class */ (function (_super) {
+    __extends(NewUser, _super);
+    function NewUser() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NewUser.prototype.HowOldAreYou = function (num) {
+        this.age = num;
+    };
+    return NewUser;
+}(User));

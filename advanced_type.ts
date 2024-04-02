@@ -70,10 +70,47 @@ function infiniteLoop() :never{
     }
 }
 
-function neverFunction2(parameter: string) {
+function neverFunction2 (parameter: string) {
     if ( typeof parameter === "string"){
         parameter + 1;
     } else {
         parameter;
+    }
+}
+
+// Object-Oriented Programming
+class User {
+    // public 붙으면 모든 자식들이 이용 가능
+    public name : string;
+    // private 붙으면 변경 방지 가능, class 안에서만 수정 가능
+    private familyName : string = 'kim'
+    // protected 붙으면 변경 방지 가능,현재 class 안에서 + extends된 class 안에서 수정 가능
+    protected age : number = 30;
+    // static 붙으면 부모 class에 직접 부여됨
+    static x = 10; // 부모만 사용 가능 (자식에게 안 물려줌, extends는 물려줌)
+    y = 20; // 자식만 사용 가능
+
+    constructor(a) {
+        this.name = this.familyName + a;
+    }
+    changeFamilyName(b) {
+        this.familyName = b
+    }
+}
+let users = new User('옥지');
+// users.familyName = 'Lee'; // error!
+users.changeFamilyName('ang kim')
+console.log(User.x)
+
+// public
+class Person {
+    constructor(public name : string) {
+        
+    }
+}
+// extends
+class NewUser extends User {
+    HowOldAreYou(num) {
+        this.age = num;
     }
 }
