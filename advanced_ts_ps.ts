@@ -117,3 +117,36 @@ namespace DogFace {
 
 let dog1 : DogSpace.Dog = 'bark';
 let dog2 : DogFace.Dog = { name : 'paw' }
+
+// Generic
+
+// (숙제1) 문자를 집어넣으면 문자의 갯수, array를 집어넣으면 
+// array 안의 자료 갯수를 콘솔창에 출력해주는 함수는 어떻게 만들까요? 
+function countElement<T extends string | string[]>(arr : T) {
+    return arr.length;
+}
+
+// (숙제2) Animal 이라는 타입이 있습니다.
+interface Animal {
+    name : string;
+    age : number 
+}
+
+let data = '{"name" : "dog", "age" : 1 }'
+
+function changeToObj<T>(a : string) : T {
+    return JSON.parse(a);
+}
+
+let result = changeToObj<Animal>(data)
+
+// (숙제3) class 를 수정해봅시다.
+class Person<T> {
+    name;
+    constructor(a : T){
+        this.name = a;
+    }
+}
+
+let ang = new Person<string>('어쩌구');
+ang.name //string 타입이 되었넹

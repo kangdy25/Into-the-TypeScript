@@ -125,3 +125,16 @@ namespace typeSpace {
 }
 
 let typeVarious : typeSpace.Info
+
+// Generic
+function arrayFunc<MyType1>(x : MyType1[]) : MyType1{
+    return x[0];
+}
+
+let newX = arrayFunc<number>([4, 2])
+
+function minusOne<MyType extends number>(a : MyType) {
+    return a-1;
+}
+
+let newA = minusOne<number>(100)
