@@ -94,3 +94,26 @@ console.log(네모)
 네모.draw()
 네모.draw()
 네모.draw()
+
+// export/import type, namespace
+
+// (숙제1) Car 그리고 Bike 타입을 만들었는데 너무 길어요
+import {CarType, BikeType} from './module'
+let a : CarType = {wheel : 4, model: 'grandeur'}
+
+// (숙제2) 너무 자주만들어 쓰는 함수가 하나 있습니다
+import { myFunction } from './module';
+let func : myFunction = function(a) {
+    console.log(a)
+}
+
+// (숙제3) 타입 중복이 너무 많이 발생합니다.
+namespace DogSpace {
+    export type Dog = string;
+}
+namespace DogFace {
+    export interface Dog { name : string };
+}
+
+let dog1 : DogSpace.Dog = 'bark';
+let dog2 : DogFace.Dog = { name : 'paw' }

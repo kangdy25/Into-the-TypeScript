@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -22,6 +23,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 // Rest Parameter
 function addAll() {
     var a = [];
@@ -125,3 +127,4 @@ var NewUser = /** @class */ (function (_super) {
     };
     return NewUser;
 }(User));
+var typeVarious;

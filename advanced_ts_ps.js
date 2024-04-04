@@ -1,4 +1,6 @@
+"use strict";
 // Rest Parameter, Destructuring 
+Object.defineProperty(exports, "__esModule", { value: true });
 // (숙제1) 숫자 여러 개를 입력하면 최댓값을 return 해주는 함수를 만들어봅시다. 
 function Maximum() {
     var a = [];
@@ -69,3 +71,13 @@ console.log(네모);
 네모.draw();
 네모.draw();
 네모.draw();
+var a = { wheel: 4, model: 'grandeur' };
+var func = function (a) {
+    console.log(a);
+};
+var DogFace;
+(function (DogFace) {
+    ;
+})(DogFace || (DogFace = {}));
+var dog1 = 'bark';
+var dog2 = { name: 'paw' };

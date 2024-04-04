@@ -1,3 +1,5 @@
+import { types } from "util";
+
 // Rest Parameter
 function addAll(...a :number[]){
     console.log(a)
@@ -114,3 +116,12 @@ class NewUser extends User {
         this.age = num;
     }
 }
+
+// export/import type, namespace
+export type Name = string;
+
+namespace typeSpace {
+    export type Info = string | number
+}
+
+let typeVarious : typeSpace.Info

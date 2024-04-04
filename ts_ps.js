@@ -124,9 +124,9 @@ if (img instanceof HTMLImageElement) {
 // Q2. 바꾸고 싶은 html 요소가 많습니다.
 var links = document.querySelectorAll('.link');
 for (var i = 0; i < links.length; i++) {
-    var a_1 = links[i];
-    if (a_1 instanceof HTMLAnchorElement) {
-        a_1.href = 'https://kakao.com';
+    var a = links[i];
+    if (a instanceof HTMLAnchorElement) {
+        a.href = 'https://kakao.com';
     }
 }
 /////////////// Class ///////////////
