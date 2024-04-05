@@ -1,6 +1,4 @@
-"use strict";
 // Rest Parameter, Destructuring 
-Object.defineProperty(exports, "__esModule", { value: true });
 // (숙제1) 숫자 여러 개를 입력하면 최댓값을 return 해주는 함수를 만들어봅시다. 
 function Maximum() {
     var a = [];
@@ -71,13 +69,61 @@ console.log(네모);
 네모.draw();
 네모.draw();
 네모.draw();
-var a = { wheel: 4, model: 'grandeur' };
-var func = function (a) {
-    console.log(a);
-};
 var DogFace;
 (function (DogFace) {
     ;
 })(DogFace || (DogFace = {}));
 var dog1 = 'bark';
 var dog2 = { name: 'paw' };
+// Generic
+// (숙제1) 문자를 집어넣으면 문자의 갯수, array를 집어넣으면 
+// array 안의 자료 갯수를 콘솔창에 출력해주는 함수는 어떻게 만들까요? 
+function countElement(arr) {
+    return arr.length;
+}
+var data = '{"name" : "dog", "age" : 1 }';
+function changeToObj(a) {
+    return JSON.parse(a);
+}
+var result = changeToObj(data);
+// (숙제3) class 를 수정해봅시다.
+var Person = /** @class */ (function () {
+    function Person(a) {
+        this.name = a;
+    }
+    return Person;
+}());
+var ang = new Person('어쩌구');
+ang.name; //string 타입이 되었넹
+// Tuple Type
+// (숙제1) 여러분이 최근에 사먹은 음식의 1. 이름 2. 가격 3. 맛있는지 
+// 여부를 array 자료에 담아보고 타입지정까지 해보십시오.
+var masjib = ['미분당', 17000, true];
+// (숙제2) 이렇게 생긴 자료는 타입지정 어떻게 해야할까요?
+var arr = ['동서녹차', 4000, true, false, true, true, false, true];
+// (숙제3) 함수에 타입지정을 해보도록 합시다.
+function tupleFunc() {
+    var rest = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        rest[_i] = arguments[_i];
+    }
+    console.log(rest);
+}
+// (숙제4) 다음과 같은 문자/숫자 분류기 함수를 만들어보십시오.
+function Distinction() {
+    var a = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        a[_i] = arguments[_i];
+    }
+    var result = [[], []];
+    for (var i = 0; i < a.length; i++) {
+        if (typeof a[i] === 'string') {
+            result[0].push(a[i]);
+        }
+        else if (typeof a[i] === 'number') {
+            result[1].push(a[i]);
+        }
+    }
+    console.log(result);
+}
+Distinction('b', 5, 6, 8, 'a');

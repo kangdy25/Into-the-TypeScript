@@ -128,3 +128,24 @@ var NewUser = /** @class */ (function (_super) {
     return NewUser;
 }(User));
 var typeVarious;
+// Generic
+function arrayFunc(x) {
+    return x[0];
+}
+var newX = arrayFunc([4, 2]);
+function minusOne(a) {
+    return a - 1;
+}
+var newA = minusOne(100);
+// Tuple Type
+var baaaark = ['dog', true];
+var baaaaaaaark = ['dog', true];
+function func1() {
+    var x = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        x[_i] = arguments[_i];
+    }
+    console.log(x);
+}
+var arrs = [1, 2, 3];
+var arrs2 = __spreadArray([4, 5], arrs, true);

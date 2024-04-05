@@ -138,3 +138,14 @@ function minusOne<MyType extends number>(a : MyType) {
 }
 
 let newA = minusOne<number>(100)
+
+// Tuple Type
+let baaaark : (string | boolean)[] = ['dog', true];
+let baaaaaaaark : [string, boolean?] = ['dog', true];
+
+function func1(...x : [number, string]) {
+    console.log(x);
+}
+
+let arrs = [1, 2, 3];
+let arrs2 : [number, number, ...number[]] = [4, 5, ...arrs];

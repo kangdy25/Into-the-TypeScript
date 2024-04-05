@@ -98,14 +98,14 @@ console.log(네모)
 // export/import type, namespace
 
 // (숙제1) Car 그리고 Bike 타입을 만들었는데 너무 길어요
-import {CarType, BikeType} from './module'
-let a : CarType = {wheel : 4, model: 'grandeur'}
+// import {CarType, BikeType} from './module'
+// let a : CarType = {wheel : 4, model: 'grandeur'}
 
 // (숙제2) 너무 자주만들어 쓰는 함수가 하나 있습니다
-import { myFunction } from './module';
-let func : myFunction = function(a) {
-    console.log(a)
-}
+// import { myFunction } from './module';
+// let func : myFunction = function(a) {
+//     console.log(a)
+// }
 
 // (숙제3) 타입 중복이 너무 많이 발생합니다.
 namespace DogSpace {
@@ -150,3 +150,33 @@ class Person<T> {
 
 let ang = new Person<string>('어쩌구');
 ang.name //string 타입이 되었넹
+
+// Tuple Type
+
+// (숙제1) 여러분이 최근에 사먹은 음식의 1. 이름 2. 가격 3. 맛있는지 
+// 여부를 array 자료에 담아보고 타입지정까지 해보십시오.
+
+let masjib : [string, number, boolean] = ['미분당', 17000, true]
+
+// (숙제2) 이렇게 생긴 자료는 타입지정 어떻게 해야할까요?
+let arr  : [string, number, ...boolean[]] = ['동서녹차', 4000, true, false, true, true, false, true]
+
+// (숙제3) 함수에 타입지정을 해보도록 합시다.
+function tupleFunc(...rest : [string, boolean, (string | number)[] ]){
+    console.log(rest)
+}
+
+// (숙제4) 다음과 같은 문자/숫자 분류기 함수를 만들어보십시오.
+function Distinction(...a : (string | number)[]) {
+    let result : [string[], number[]] = [[], []];
+    for (let i = 0; i < a.length; i++) {
+        if (typeof a[i] === 'string') {
+            result[0].push(a[i] as string);
+        } else if (typeof a[i] === 'number') {
+            result[1].push(a[i] as number);
+        }
+    }
+    console.log(result);
+}
+
+Distinction('b', 5, 6, 8, 'a')
