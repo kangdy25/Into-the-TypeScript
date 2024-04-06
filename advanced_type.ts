@@ -149,3 +149,6 @@ function func1(...x : [number, string]) {
 
 let arrs = [1, 2, 3];
 let arrs2 : [number, number, ...number[]] = [4, 5, ...arrs];
+
+// d.ts
+import { multiply } from "./test.d";
