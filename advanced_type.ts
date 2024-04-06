@@ -150,5 +150,29 @@ function func1(...x : [number, string]) {
 let arrs = [1, 2, 3];
 let arrs2 : [number, number, ...number[]] = [4, 5, ...arrs];
 
+// declare : 다른 곳에 이미 정의된 변수나 함수 재정의
+// declare let a :number;
+// console.log(a + 1);
+
+declare global {
+    type Dog = string;
+} 
+
 // d.ts
 import { multiply } from "./test.d";
+
+// implements
+
+interface CarType {
+    model : string,
+    price : number
+}
+
+class Car implements CarType {
+    model : string;
+    price : number = 1000;
+    constructor(a :string){
+        this.model = a
+    }
+}
+let 붕붕이 = new Car('morning');
