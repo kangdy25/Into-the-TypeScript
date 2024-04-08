@@ -176,3 +176,32 @@ class Car implements CarType {
     }
 }
 let 붕붕이 = new Car('morning');
+
+// object index signatures
+interface StringOnly {
+    [key: string]: string
+}
+
+let obj :StringOnly = {
+    name : 'kim',
+    age : '20',
+    location : 'seoul'
+}
+
+let array :StringOnly = {
+    0 : 'kim',
+    1 : '20',
+    2 : 'Seoul',
+}
+
+interface MyType {
+    'font-size': MyType | number
+}
+
+let css = {
+    'font-size' : {
+        'font-size' : {
+            'font-size' : 14
+        }
+    }
+}

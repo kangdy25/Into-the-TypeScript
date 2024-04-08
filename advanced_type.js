@@ -149,3 +149,28 @@ function func1() {
 }
 var arrs = [1, 2, 3];
 var arrs2 = __spreadArray([4, 5], arrs, true);
+var Car = /** @class */ (function () {
+    function Car(a) {
+        this.price = 1000;
+        this.model = a;
+    }
+    return Car;
+}());
+var 붕붕이 = new Car('morning');
+var obj = {
+    name: 'kim',
+    age: '20',
+    location: 'seoul'
+};
+var array = {
+    0: 'kim',
+    1: '20',
+    2: 'Seoul',
+};
+var css = {
+    'font-size': {
+        'font-size': {
+            'font-size': 14
+        }
+    }
+};
