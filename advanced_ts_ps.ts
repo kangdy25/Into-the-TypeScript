@@ -212,3 +212,25 @@ let obj3 : recursiveCss = {
         }
     }
 }
+
+// Type Changer
+
+// (숙제1) 다음 타입을 변환기 돌려보십시오.
+type Bus = {
+    color : string,
+    model : boolean,
+    price : number
+}
+
+type TypeChanger <T> = {
+    [key in keyof T] : string | number;
+}
+
+type newBus = TypeChanger<Bus>;
+
+// (숙제2) 이런 변환기는 어떻게 만들어야할까요?
+type TypeChangers <MyType, T> = {
+    [key in keyof MyType] : T;
+}
+
+type newBus2 = TypeChangers<Bus, string>

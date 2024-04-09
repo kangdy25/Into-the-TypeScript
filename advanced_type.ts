@@ -205,3 +205,26 @@ let css = {
         }
     }
 }
+
+// keyof
+interface Person {
+    age: number;
+    name: string;
+}
+
+type PersonKeys = keyof Person;   //"age" | "name" 타입됩니다
+let human1 :PersonKeys = 'age'; //가능
+// let human2 :PersonKeys = 'ageeeee'; //불가능
+
+// Type Changer
+type Vehicle = {
+    color: boolean,
+    model : boolean,
+    price : boolean | number,
+};
+
+type TypeChanger <MyType> = {
+    [key in keyof MyType]: string;
+};
+
+type newCar = TypeChanger<Vehicle>;

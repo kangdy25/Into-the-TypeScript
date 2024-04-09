@@ -174,3 +174,4 @@ var css = {
         }
     }
 };
+var human1 = 'age'; //가능
