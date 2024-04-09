@@ -234,3 +234,11 @@ type TypeChangers <MyType, T> = {
 }
 
 type newBus2 = TypeChangers<Bus, string>
+
+// Infer
+
+// (숙제1) 타입 파라미터로 
+type Age<T> = T extends [string, ...any] ? T[0] : unknown;
+
+// (숙제2) 함수 타입을 입력하면 함수 파라미터 부분의 타입을 뽑아주는 기계를 만들어보십시오. 
+type Gacha<T> = T extends (x : infer R)=>any ? R : any;

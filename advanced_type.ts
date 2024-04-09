@@ -228,3 +228,20 @@ type TypeChanger <MyType> = {
 };
 
 type newCar = TypeChanger<Vehicle>;
+
+// Conditional Statement
+type Age<T> = T extends string ? string : unknown;
+let age1 : Age<string> //age는 string 타입
+let age2 : Age<number> //age는 unknown 타입
+
+type FirstItem<T> = T extends any[] ? T[0] : any
+
+// Infer
+type Person1<T> = T extends infer R ? R : unknown; 
+type newType = Person1<string> // newType은 string 타입입니다 
+
+type giveMeType<T> = T extends (infer R)[] ? R : unknown; 
+type NewType = giveMeType< boolean[] > // NewType 은 boolean 타입입니다 
+
+type giveMeType2<T> = T extends ( ()=> infer R ) ? R : unknown; 
+type NewTypes = giveMeType2< () => number > // NewTypes은 number 타입입니다 

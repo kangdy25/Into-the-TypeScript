@@ -175,3 +175,5 @@ var css = {
     }
 };
 var human1 = 'age'; //가능
+var age1; //age는 string 타입
+var age2; //age는 unknown 타입
