@@ -1,0 +1,22 @@
+{
+  "name": "into-the-typescript",
+  "version": "1.0.0",
+  "description": "타입스크립트를 배워봅시다",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kangdy25/Into-the-TypeScript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kangdy25/Into-the-TypeScript/issues"
+  },
+  "homepage": "https://github.com/kangdy25/Into-the-TypeScript#readme",
+  "dependencies": {
+    "@types/node": "^22.14.1"
+  }
+}
