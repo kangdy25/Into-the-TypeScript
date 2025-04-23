@@ -6,6 +6,7 @@
     "outDir": "dist",
     "strict": true,
     "moduleDetection": "force"
+    // "strictNullChecks": false
   },
   "include": ["src"]
 }
