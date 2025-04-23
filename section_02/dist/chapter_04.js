@@ -12,4 +12,14 @@ let user2 = {
     birth: "2003.09.09",
     age: 23,
 };
+let countryCodes = {
+    Korea: "ko",
+    Unitedstate: "us",
+    UnitedKingdom: "uk",
+};
+let countryNumberCodes = {
+    Korea: 410,
+    Unitedstate: 840,
+    UnitedKingdom: 826,
+};
 export {};
