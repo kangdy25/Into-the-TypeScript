@@ -6,6 +6,11 @@ var Role;
     Role[Role["PLAYER"] = 2] = "PLAYER";
     Role[Role["PATIENT"] = 3] = "PATIENT";
 })(Role || (Role = {}));
+var Language;
+(function (Language) {
+    Language["korean"] = "ko";
+    Language["english"] = "en";
+})(Language || (Language = {}));
 let player1 = {
     name: "Enzo",
     role: Role.CAPTAIN, // 주장
