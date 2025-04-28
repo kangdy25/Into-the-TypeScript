@@ -1,48 +1,25 @@
-// Unknown 타입 (전체집합)
-function unknownExam() {
-    // 업캐스팅
-    let a = 1;
-    let b = "hello";
-    let c = true;
-    let d = null;
-    let e = undefined;
-    let unknownVar;
-    // 다운캐스팅 (오류)
-    // let num: number = unknownVar;
-    // let string: string = unknownVar;
-    // let bool: boolean = unknownVar;
+// 함수 타입 정의
+// 함수를 설명하는 가장 좋은 방법
+// => 어떤 매개변수를 받고, 어떤 값을 반환하는지 설명
+// => 어떤 [타입의] 매개변수를 받고, 어떤 [타입의] 값을 반환하는지 설명
+function func(a, b) {
+    return a + b;
 }
-// Never 타입 (공집합)
-function neverExam() {
-    function neverFunc() {
-        while (true) { }
+// 화살표 함수 타입 정의
+const add = (a, b) => a + b;
+// 함수의 매개변수
+function introduce(name = "동윤", age) {
+    console.log(`이름은 ${name}`);
+    if (typeof age === "number") {
+        console.log(`나이는 ${age + 1}`);
     }
-    // 업캐스팅
-    let num = neverFunc();
-    let str = neverFunc();
-    let bool = neverFunc();
-    // 다운캐스팅 (오류)
-    // let never1: never = 10;
-    // let never2: never = "string";
-    // let never3: never = true;
 }
-// Void 타입
-function voidExam() {
-    function voidFunc() {
-        console.log("hi");
-    }
-    // 업캐스팅
-    let voidVar = undefined;
+introduce("동윤", 25);
+// Rest Parameter
+function sum(...rest) {
+    let result = 0;
+    rest.forEach((it) => (result += it));
+    return result;
 }
-// Any 타입 (모든 업캐스팅과 다운캐스팅을 무시)
-function anyExam() {
-    let unknownVar;
-    let anyVar;
-    let undefinedVar;
-    let neverVar;
-    anyVar = unknownVar;
-    undefinedVar = anyVar;
-    // never 타입은 공집합이기에 할당 불가
-    // neverVar = anyVar;
-}
+console.log(sum(1, 2, 3, 4, 5));
 export {};
