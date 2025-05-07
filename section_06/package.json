@@ -1,5 +1,5 @@
 {
-  "name": "section_04",
+  "name": "section_06",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,6 @@
   "dependencies": {
     "@types/node": "^22.14.1",
     "section_03": "file:",
-    "section_04": "file:"
+    "section_06": "file:"
   }
 }
