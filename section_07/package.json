@@ -1,0 +1,18 @@
+{
+  "name": "section_07",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.14.1",
+    "section_03": "file:",
+    "section_06": "file:",
+    "section_07": "file:"
+  }
+}
