@@ -11,8 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^22.14.1",
-    "section_03": "file:",
-    "section_06": "file:",
     "section_07": "file:"
   }
 }
