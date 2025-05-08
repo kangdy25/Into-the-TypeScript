@@ -21,4 +21,7 @@ function forEach(arr, callback) {
 forEach(arr2, (it) => {
     console.log(it.toFixed());
 });
+forEach(["hi", "hello"], (it) => {
+    console.log(it);
+});
 export {};
