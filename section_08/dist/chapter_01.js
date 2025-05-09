@@ -1,14 +1,28 @@
-// 제네릭
-function func(value) {
-    return value;
+// Indexed Excess Type
+function printAuthorInfo1(author) {
+    console.log(`${author.name} - ${author.id}`);
 }
-let num1 = func(10);
-let bool1 = func(true);
-let str1 = func("hello");
-function genericFunc(value) {
-    return value;
+const post1 = {
+    title: "게시글 제목",
+    content: "게시글 본문",
+    author: {
+        id: 1,
+        name: "동윤",
+        age: 25,
+        location: "어딘가",
+    },
+};
+function printAuthorInfo2(author) {
+    console.log(`${author.name} - ${author.id}`);
 }
-let num2 = genericFunc(10);
-let bool2 = genericFunc(true);
-let str2 = genericFunc("hello");
+const post2 = {
+    title: "게시글 제목",
+    content: "게시글 본문",
+    author: {
+        id: 1,
+        name: "동윤",
+        age: 25,
+        location: "어딘가",
+    },
+};
 export {};
