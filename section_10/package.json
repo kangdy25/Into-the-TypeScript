@@ -1,5 +1,5 @@
 {
-    "name": "section_09",
+    "name": "section_10",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -11,6 +11,6 @@
     "license": "ISC",
     "dependencies": {
         "@types/node": "^22.14.1",
-        "section_09": "file:"
+        "section_10": "file:"
     }
 }
