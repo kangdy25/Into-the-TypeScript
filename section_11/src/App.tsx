@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer, useRef } from "react";
+import { createContext, useContext, useEffect, useReducer, useRef } from "react";
 import "./App.css";
 import Editor from "./components/Editor";
 import type { Todo } from "./types";
@@ -28,8 +28,8 @@ function reducer(state: Todo[], action: Action) {
     }
 }
 
-export const TodoStateContext = React.createContext<Todo[] | null>(null);
-export const TodoDispatchContext = React.createContext<{
+export const TodoStateContext = createContext<Todo[] | null>(null);
+export const TodoDispatchContext = createContext<{
     onClickAdd: (text: string) => void;
     onClickDelete: (id: number) => void;
 } | null>(null)
